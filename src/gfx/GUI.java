@@ -8,15 +8,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utils.io.FileSelector;
-import utils.operations.ocr.ReadDictionary;
 import utils.operations.imageprocessing.Crop;
+import utils.operations.ocr.ReadDictionary;
 import utils.operations.ocr.TessOCR;
 
 /**
@@ -52,8 +56,30 @@ public class GUI {
         help.getItems().addAll(DisplayHelp.getAboutMenuItem(), DisplayReadme.getReadmeMenuItem());
         ocr.setDisable(true);
 
+        //VBox
+        VBox imageViewVBox = new VBox();
+        imageViewVBox.setAlignment(Pos.CENTER);
+        imageViewVBox.setMinSize(250, 250);
+        imageViewVBox.getChildren().add(DisplayImageView.imageView);
+
+        imageViewVBox.setOnMouseClicked(e -> {
+            if (DisplayImageView.hasImage()) {
+                ScrollPane sp = new ScrollPane();
+                StackPane stp = new StackPane();
+                ImageView iv = new ImageView();
+                stp.getChildren().add(Crop.crop(iv));
+                sp.setContent(stp);
+                sp.setFitToWidth(true);
+                sp.setFitToHeight(true);
+                iv.setImage(DisplayImageView.getImage());
+                Scene scene = new Scene(sp, 800, 600);
+                DisplayWindow.setScene(scene);
+                DisplayWindow.show();
+            }
+        });
+
         //HBox
-        tableImgHBox.getChildren().addAll(DisplayTableView.getTableView(), Crop.crop(DisplayImageView.imageView));
+        tableImgHBox.getChildren().addAll(DisplayTableView.getTableView(), imageViewVBox /*Crop.crop(DisplayImageView.imageView)*/);
         HBox.setHgrow(DisplayTableView.getTableView(), Priority.ALWAYS);
         tableImgHBox.setMaxWidth(Double.MAX_VALUE);
         tableImgHBox.setAlignment(Pos.CENTER);

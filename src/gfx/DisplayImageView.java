@@ -1,7 +1,9 @@
 package gfx;
 
+import javafx.scene.SnapshotParameters;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 
 /**
  *
@@ -12,10 +14,9 @@ public class DisplayImageView {
     protected static ImageView imageView = new ImageView();
 
     protected static void init() {
-        imageView.minHeight(500);
-        imageView.minWidth(500);
-        imageView.maxHeight(Double.MAX_VALUE);
-        imageView.maxWidth(Double.MAX_VALUE);
+        imageView.setFitWidth(375.0);
+        imageView.setFitHeight(375.0);
+        imageView.setPreserveRatio(true);
     }
 
     public static boolean hasImage() {
@@ -28,5 +29,9 @@ public class DisplayImageView {
 
     public static void setImage(Image image) {
         imageView.setImage(image);
+    }
+
+    public static void snapshot(SnapshotParameters params, WritableImage image) {
+        imageView.snapshot(params, image);
     }
 }

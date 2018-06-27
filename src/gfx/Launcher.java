@@ -15,7 +15,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage primaryStage) {
         GUI gui = new GUI(primaryStage);
-
+        
         /*Initialize*/
         DisplayAlertBox.init();
         DisplayHelp.init();
@@ -27,6 +27,7 @@ public class Launcher extends Application {
         DisplayTableView.init();
         DisplayTextArea.init();
         DisplayWindow.init();
+        DisplayImageView.init();
         CSS.init(primaryStage.getScene());
         TessOCR.init(); //Tesseract that will perform the OCR
         FileSelector.init();

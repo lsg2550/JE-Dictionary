@@ -1,5 +1,7 @@
 package utils.operations.imageprocessing;
 
+import gfx.DisplayImageView;
+import gfx.DisplayWindow;
 import java.io.File;
 import java.io.IOException;
 import javafx.embed.swing.SwingFXUtils;
@@ -31,8 +33,8 @@ public class Crop {
         //Image layer: a group of images
         Group imageLayer = new Group();
         imageLayer.getChildren().add(imageView);
-        imageView.setFitHeight(250.0);
-        imageView.setFitWidth(250.0);
+        //imageView.setFitHeight(250.0);
+        //imageView.setFitWidth(250.0);
         imageView.setPreserveRatio(true);
 
         // Rubberband selection
@@ -72,6 +74,7 @@ public class Crop {
         WritableImage wi = new WritableImage(width, height);
         imageView.snapshot(parameters, wi);
         imageView.setImage(wi);
+        DisplayImageView.setImage(imageView.getImage());
 
         try {
             File newFile = new File("docs/temp/croppedImage.png");
@@ -82,6 +85,8 @@ public class Crop {
         } catch (IOException ex) {
             System.out.println("There is no previous image or the previous image was moved.");
         }
+
+        DisplayWindow.close();
     }
 
     /**
