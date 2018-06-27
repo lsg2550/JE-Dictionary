@@ -1,0 +1,125 @@
+/* MY COLOR PALETTE
+#666633 (Dark Forest Green)
+#CCCC99 (Light Forest Green)
+#FFFFFF (White)
+#990033 (Maroon)
+#6E6568 (Dark Gray)
+Padding Goes: TOP RIGHT BOTTOM LEFT
+*/
+
+/*Root*/
+.root{
+    -fx-background-color: #666633;  
+}
+
+/*Menu-Bar*/
+.menu-bar{
+    -fx-background-color: #CCCC99;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+}
+
+/*Menu*/
+.menu{
+    -fx-background-color: #CCCC99;
+}
+
+.menu .label{
+    -fx-text-fill: black;
+}
+
+.menu:hover{
+    -fx-background-color: transparent;
+    -fx-underline: true;
+}
+
+.menu:hover .label{
+    -fx-text-fill: #666633;
+}
+
+.menu:focus{
+    -fx-background-color: transparent;
+    -fx-underline: true;
+}
+
+.menu:focus .label{
+    -fx-text-fill: #666633;
+}
+
+/*Menu-Item*/
+.context-menu{
+    -fx-background-color: #666633;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+}
+
+.context-menu .menu-item{
+    -fx-background-color: #666633;
+}
+
+.context-menu .menu-item .label{
+    -fx-text-fill: black;
+}
+
+.context-menu .menu-item:hover{
+    -fx-background-color: #666633;
+}
+
+.context-menu .menu-item:hover .label{
+    -fx-text-fill: #CCCC99;
+    -fx-underline: true;
+}
+
+.context-menu .menu-item:focus{
+    -fx-background-color: #666633;
+}
+
+.context-menu .menu-item:focus .label{
+    -fx-text-fill: #CCCC99;
+    -fx-underline: true;
+}
+
+/*TableView*/
+.table-view{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.table-view .placeholder{
+    -fx-background-color: #990033;
+    -fx-border-color: #666633;
+}
+
+.table-view .column-header-background .filler{
+    -fx-background-color: #990033;
+    -fx-border-color: #666633;
+}
+
+.table-view .column-header-background .nested-column-header .column-header{
+    -fx-background-color: #990033;
+    -fx-border-color: #666633;
+}
+
+/*Cell*/
+.cell {
+    -fx-background-color: #CCCC99;
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-color: black;
+    -fx-border-radius: 5 5 5 5;
+}
+
+/*Text Area*/
+.text-area {
+    -fx-background-color: #666633;
+    -fx-text-fill: white;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: #666633;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: #990033;
+    -fx-border-color: #666633;
+}

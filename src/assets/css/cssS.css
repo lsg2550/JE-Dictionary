@@ -1,0 +1,128 @@
+/* 
+    Created on : Jun 26, 2018, 3:02:00 PM
+    Author     : Luis
+*/
+
+/* MY COLOR PALETTE
+UTRGV Color Pallete
+http://www.utrgv.edu/umc/creative-services/graphic-identity-guidelines/utrgv-color-palette/index.htm
+
+Padding Goes: TOP RIGHT BOTTOM LEFT
+*/
+
+/*Root*/
+.root{
+    -fx-background-color: #646469;  
+}
+
+/*Menu-Bar*/
+.menu-bar{
+    -fx-background-color: #F05023;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+}
+
+/*Menu*/
+.menu{
+    -fx-background-color: #F05023;
+}
+
+.menu .label{
+    -fx-text-fill: black;
+}
+
+.menu:hover{
+    -fx-background-color: transparent;
+    -fx-underline: true;
+}
+
+.menu:hover .label{
+    -fx-text-fill: #646469;
+}
+
+.menu:focus{
+    -fx-background-color: transparent;
+    -fx-underline: true;
+}
+
+.menu:focus .label{
+    -fx-text-fill: #646469;
+}
+
+/*Menu-Item*/
+.context-menu{
+    -fx-background-color: #646469;
+    -fx-background-radius: 0 0 5 5;
+    -fx-border-radius: 0 0 5 5;
+}
+
+.context-menu .menu-item{
+    -fx-background-color: #646469;
+}
+
+.context-menu .menu-item .label{
+    -fx-text-fill: black;
+}
+
+.context-menu .menu-item:hover{
+    -fx-background-color: #646469;
+}
+
+.context-menu .menu-item:hover .label{
+    -fx-text-fill: #F05023;
+    -fx-underline: true;
+}
+
+.context-menu .menu-item:focus{
+    -fx-background-color: #646469;
+}
+
+.context-menu .menu-item:focus .label{
+    -fx-text-fill: #F05023;
+    -fx-underline: true;
+}
+
+/*TableView*/
+.table-view{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.table-view .placeholder{
+    -fx-background-color: #646469;
+    -fx-border-color: #646469;
+}
+
+.table-view .column-header-background .filler{
+    -fx-background-color: #646469;
+    -fx-border-color: #646469;
+}
+
+.table-view .column-header-background .nested-column-header .column-header{
+    -fx-background-color: #646469;
+    -fx-border-color: #646469;
+}
+
+/*Cell*/
+.cell {
+    -fx-background-color: #F05023;
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-color: black;
+    -fx-border-radius: 5 5 5 5;
+}
+
+/*Text Area*/
+.text-area {
+    -fx-background-color: #F05023;
+    -fx-text-fill: white;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: #646469;
+}
+
+.text-area .scroll-pane .content{
+    -fx-background-color: #646469;
+    -fx-border-color: #646469;
+}

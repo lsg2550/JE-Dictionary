@@ -61,3 +61,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Custom Directories
+build/
+dist/
+nbproject/
+docs/temp/
+build.xml
+manifest.mf
+!lib/*.jar
+!lib/lib/*.jar
